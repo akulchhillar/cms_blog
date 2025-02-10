@@ -25,7 +25,7 @@ const title = ref(null)
 const tags = ref([])
 const query = `
 query Publication {
-  publication(host: "blog.akulchhillar.com") {
+  publication(host: "akulchhillar.hashnode.dev") {
     isTeam
     title
     post(slug: "${route.params.slug}") {

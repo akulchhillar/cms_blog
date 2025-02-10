@@ -47,7 +47,7 @@ let btn_text = ref('Get Previous Posts')
 async function get_posts() {
 
   let query = `query Publication {
-  publication(host: "blog.akulchhillar.com") {
+  publication(host: "akulchhillar.hashnode.dev") {
     posts(
       first: 5
       after: "${last_after.value}"
