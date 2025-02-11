@@ -3,22 +3,24 @@
 <div class="mx-auto container flex flex-col my-4 gap-10 justify-center items-center ">
 <Header/>
 
-  <div class="flex flex-col gap-6 justify-center w-1/3">
-    <div class="text-xl font-semibold"> My Thoughts</div>
-    <div v-for="post in content" :key="post.node.slug">
+  <div class="flex flex-col gap-6 lg:w-1/2 items-center px-2">
+    <div class="text-xl font-semibold self-start"> My Thoughts</div>
+    <div id="blogs" class=" flex flex-col gap-4 w-full">
+    <div v-for="post in content" :key="post.node.slug" class="">
     
         <router-link :to="'/blog/' + post.node.slug" class="bg-[#66FCF1] 
-        self-start underline underline-offset-8 hover:bg-[#45C8C7]">
+         underline underline-offset-8 hover:bg-[#45C8C7] text-balance self-start">
             {{ post.node.title }}</router-link>
 
       
     </div>
+  </div>
 
 </div>
 
 <button :disabled="has_next_page==false" class="disabled:bg-[#FAFAFA] disabled:border-0 disabled:hover:bg-[#FAFAFA]
      border-2 p-2 w-prose
-    border-[#66FCF1] lg:hover:bg-[#66FCF1] md:active:bg-[#66FCF1] sm:active:bg-[#66FCF1]"
+    border-[#66FCF1] lg:hover:bg-[#66FCF1] md:active:bg-[#66FCF1] sm:active:bg-[#66FCF1] "
     :onclick="get_previous_posts">
     
         {{ btn_text }}
