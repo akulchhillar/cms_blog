@@ -46,9 +46,32 @@ let btn_text = ref('Get Previous Posts')
 
 
 
-async function get_posts() {
+async function get_posts(init=false) {
 
   let query = `query Publication {
+  publication(host: "akulchhillar.hashnode.dev") {
+    posts(
+      first: 5
+    ) {
+      edges {
+        node {
+          title
+          slug
+          readTimeInMinutes
+        }
+        
+      }
+         pageInfo {
+                endCursor
+                hasNextPage
+        				
+            }
+    }
+  }
+}`
+
+if (init){
+  query = `query Publication {
   publication(host: "akulchhillar.hashnode.dev") {
     posts(
       first: 5
@@ -70,6 +93,8 @@ async function get_posts() {
     }
   }
 }`
+}
+
 
 
 const data = await fetch('https://gql.hashnode.com',{
@@ -85,7 +110,7 @@ return data.json()
 function get_previous_posts(){
 
   if (has_next_page.value){
-    get_posts().then((data)=>{
+    get_posts(true).then((data)=>{
     content.value = content.value.concat(data['data']['publication']['posts']['edges'])
     last_after.value = data['data']['publication']['posts']['pageInfo']['endCursor']
     has_next_page.value = data['data']['publication']['posts']['pageInfo']['hasNextPage']
