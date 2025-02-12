@@ -9,7 +9,7 @@
 			<a href="https://www.linkedin.com/in/akulchhillar/" target="_blank" class="bg-[#66FCF1] underline underline-offset-8 hover:bg-[#45C8C7]">LinkedIn</a> and 
 			<a href="https://x.com/thequestofakul" target="_blank" class="bg-[#66FCF1] underline underline-offset-8 hover:bg-[#45C8C7]">Twitter</a>
             , or get the latest updates via
-			<a href="https://blog.akulchhillar.com/rss.xml" target="_blank" class="bg-[#66FCF1] underline underline-offset-8 hover:bg-[#45C8C7]">RSS</a> 
+			<a href="https://akulchhillar.hashnode.dev/rss.xml" target="_blank" class="bg-[#66FCF1] underline underline-offset-8 hover:bg-[#45C8C7]">RSS</a> 
 			</p>
          
       </div>
