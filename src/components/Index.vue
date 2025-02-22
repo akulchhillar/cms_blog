@@ -9,7 +9,7 @@
     <div v-for="post in content" :key="post.node.slug" class="">
     
         <router-link :to="'/blog/' + post.node.slug" class="bg-[#66FCF1] 
-         underline underline-offset-8 hover:bg-[#45C8C7] text-balance self-start">
+         underline underline-offset-8 hover:bg-[#45C8C7] text-balance self-start overflow-hidden">
             {{ post.node.title }}</router-link>
 
       

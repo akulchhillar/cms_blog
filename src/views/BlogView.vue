@@ -1,12 +1,12 @@
 <template>
  
-  <div class="mx-auto container flex flex-col justify-center items-center gap-4 my-4">
-    <Header/>
+  <div class="mx-auto container flex flex-col justify-center items-center my-4">
+    <Header />
     <Skeleton class="my-4" v-show="title==null"/>
-  <div class="font-bold my-4">{{ title }}</div>
+  <div class="font-bold text-2xl">{{ title }}</div>
  
   <div class="prose prose-a:bg-[#66FCF1] prose-a:font-normal prose-a:underline
-   prose-lg justify-center self-center my-4 prose-a:underline-offset-8 p-4" v-html="content"></div>
+   prose-lg justify-center self-center my-4 prose-a:underline-offset-8 p-4 prose-img:rounded-3xl" v-html="content"></div>
    <Footer/>
   </div>
 
