@@ -74,7 +74,7 @@ if (init){
   query = `query Publication {
   publication(host: "akulchhillar.hashnode.dev") {
     posts(
-      first: 5
+      first: 6
       after: "${last_after.value}"
     ) {
       edges {
