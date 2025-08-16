@@ -51,7 +51,7 @@ async function get_posts(init=false) {
   let query = `query Publication {
   publication(host: "akulchhillar.hashnode.dev") {
     posts(
-      first: 5
+      first: 6
     ) {
       edges {
         node {
@@ -74,7 +74,7 @@ if (init){
   query = `query Publication {
   publication(host: "akulchhillar.hashnode.dev") {
     posts(
-      first: 6
+      first: 5
       after: "${last_after.value}"
     ) {
       edges {
