@@ -23,6 +23,9 @@ const route = useRoute()
 const content = ref(null)
 const title = ref(null)
 const tags = ref([])
+
+async function get_blog_content() {
+
 const query = `
 query Publication {
   publication(host: "akulchhillar.hashnode.dev") {
@@ -40,7 +43,7 @@ query Publication {
   }
 }
 `
-async function get_blog_content() {
+
 
   const data = await fetch('https://gql.hashnode.com',{
     method:'POST',
@@ -48,12 +51,14 @@ async function get_blog_content() {
     body: JSON.stringify({ query })
 
   })
-
+  
   return data.json()
 }
 
 onMounted(()=>{
+  
   get_blog_content().then((data)=>{
+    
     if(data['data']['publication']['post']!=null){
     content.value = data['data']['publication']['post']['content']['html']
     title.value = data['data']['publication']['post']['title']
