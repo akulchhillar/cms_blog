@@ -8,8 +8,7 @@
     <div id="blogs" class=" flex flex-col gap-4 w-full">
     <div v-for="post in content" :key="post.node.slug" class="">
     
-        <router-link :to="'/blog/' + post.node.slug" class="bg-[#66FCF1] 
-         underline underline-offset-8 hover:bg-[#45C8C7] text-balance self-start overflow-hidden">
+        <router-link :to="'/blog/' + post.node.slug" class="blog-link text-balance self-start overflow-hidden">
             {{ post.node.title }}</router-link>
 
       
@@ -19,8 +18,8 @@
 </div>
 
 <button :disabled="has_next_page==false" class="disabled:bg-[#FAFAFA] disabled:border-0 disabled:hover:bg-[#FAFAFA]
-     border-2 p-2 w-prose
-    border-[#66FCF1] lg:hover:bg-[#66FCF1] md:active:bg-[#66FCF1] sm:active:bg-[#66FCF1] "
+      p-2 w-prose
+     lg:hover:bg-[#FFF176] md:active:bg-[#FFF176] sm:active:bg-[#FFF176] "
     :onclick="get_previous_posts">
     
         {{ btn_text }}
@@ -38,6 +37,7 @@
 import { onMounted,ref, watch } from 'vue';
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
+import { annotate } from 'rough-notation';  
 
 let content = ref([])
 let last_after = ref('')
@@ -114,6 +114,18 @@ function get_previous_posts(){
     content.value = content.value.concat(data['data']['publication']['posts']['edges'])
     last_after.value = data['data']['publication']['posts']['pageInfo']['endCursor']
     has_next_page.value = data['data']['publication']['posts']['pageInfo']['hasNextPage']
+  }).then(()=>{
+let links = document.getElementsByClassName('blog-link');
+
+for (let i = 0; i < links.length; i++) {
+  if((links[i].textContent != "The Quest of Akul")&&(links[i].classList.contains('highlighted')==false)){
+   
+    const annotation = annotate(links[i], { type: 'highlight' ,color: '#FFF176'})
+  annotation.show()
+  
+  }
+  
+}
   })
   }
  
@@ -136,6 +148,32 @@ onMounted(()=>{
     has_next_page.value = data['data']['publication']['posts']['pageInfo']['hasNextPage']
     
     
+  }).then(()=>{
+let links = document.getElementsByClassName('blog-link');
+
+for (let i = 0; i < links.length; i++) {
+ 
+    const annotation = annotate(links[i], { type: 'highlight' ,color: '#FFF176'})
+    links[i].classList.add('highlighted')
+  annotation.show()
+  
+  
+  
+}
+
+let footerlinks = document.getElementsByTagName('a');
+
+for (let i = 0; i < footerlinks.length; i++) {
+  if(footerlinks[i].textContent != "The Quest of Akul"){
+   const annotation = annotate(footerlinks[i], { type: 'highlight' ,color: '#FFF176'})
+   
+  annotation.show()
+  }
+ 
+  
+  
+  
+}
   })
 
 

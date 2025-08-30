@@ -6,10 +6,10 @@
       <div class="mx-auto text-center">
 
           <p class="mx-auto mb-8 max-w-2xl font-light  md:mb-12 ">I'd love to hear from you! Join the conversation on 
-			<a href="https://www.linkedin.com/in/akulchhillar/" target="_blank" class="bg-[#66FCF1] underline underline-offset-8 hover:bg-[#45C8C7]">LinkedIn</a> and 
-			<a href="https://x.com/thequestofakul" target="_blank" class="bg-[#66FCF1] underline underline-offset-8 hover:bg-[#45C8C7]">Twitter</a>
+			<a href="https://www.linkedin.com/in/akulchhillar/" target="_blank" class=" ">LinkedIn</a> and 
+			<a href="https://x.com/thequestofakul" target="_blank" class="">Twitter</a>
             , or get the latest updates via
-			<a href="https://akulchhillar.hashnode.dev/rss.xml" target="_blank" class="bg-[#66FCF1] underline underline-offset-8 hover:bg-[#45C8C7]">RSS</a> 
+			<a href="https://akulchhillar.hashnode.dev/rss.xml" target="_blank" class="">RSS</a> 
 			</p>
          
       </div>
